@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZXLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="DuX-Ti-hFZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ltV-Mh-tlM">
+                                <rect key="frame" x="16" y="539" width="343" height="29"/>
+                                <segments>
+                                    <segment title="3"/>
+                                    <segment title="6"/>
+                                    <segment title="8"/>
+                                    <segment title="20"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentCtrlValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="1So-YU-8C6"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBj-uA-cqm">
+                                <rect key="frame" x="16" y="607" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tBj-uA-cqm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2mV-uo-ChB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tBj-uA-cqm" secondAttribute="trailing" constant="16" id="7nr-z6-ZCQ"/>
+                            <constraint firstItem="DuX-Ti-hFZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BXi-Ig-JIM"/>
+                            <constraint firstItem="ltV-Mh-tlM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IOc-IF-jsP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ltV-Mh-tlM" secondAttribute="bottom" constant="100" id="ImF-Pc-767"/>
+                            <constraint firstItem="DuX-Ti-hFZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="K6P-xc-ZuB"/>
+                            <constraint firstItem="DuX-Ti-hFZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZwW-7S-dRi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tBj-uA-cqm" secondAttribute="bottom" constant="60" id="hJp-Xj-afk"/>
+                            <constraint firstItem="DuX-Ti-hFZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iZ9-rQ-VH6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ltV-Mh-tlM" secondAttribute="trailing" constant="16" id="puo-aZ-UfR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbPrizeInfo" destination="tBj-uA-cqm" id="5LA-OP-gT8"/>
+                        <outlet property="segmentCtrl" destination="ltV-Mh-tlM" id="50E-xC-LLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bg" width="375" height="477"/>
+    </resources>
+</document>
