@@ -56,4 +56,4 @@
     func zxDrawPrizeEndAction(prizeView: ZXDrawPrizeView, prize index: NSInteger)
 ```
 
-- `If Copy,Pls Keep The Writer Info.Thks`
+- `If Copy,Pls Keep The Writer Info.`
