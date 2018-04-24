@@ -23,40 +23,40 @@
 #### `Init`
 
 ```
-	drawPrizeView = ZXDrawPrizeView.init(CGPoint(x: 100, y: 100), width: 400)
-	self.view.addSubview(drawPrizeView)
-	drawPrizeView.delegate = self
-	drawPrizeView.dataSource = self
+drawPrizeView = ZXDrawPrizeView.init(CGPoint(x: 100, y: 100), width: 400)
+self.view.addSubview(drawPrizeView)
+drawPrizeView.delegate = self
+drawPrizeView.dataSource = self
 ```
 
 
 #### `DataSouce`
 
 ```
-    ///奖品格子数量
-    func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger
-    ///商品图片(包括谢谢参与)
-    //本地图片(二选一 优先)
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage?
-    //网络图片(二选一)
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String?
-    ///某项奖品抽完
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, drawOutAt index: NSInteger) -> Bool
-    ///点击抽奖按钮
-    func zxDrawPrizeButtonImage(prizeView: ZXDrawPrizeView) -> UIImage
-    ///大背景
-    func zxDrawPrizeBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
-    ///滚动背景
-    func zxDrawPrizeScrollBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
+///奖品格子数量
+func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger
+///商品图片(包括谢谢参与)
+//本地图片(二选一 优先)
+func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage?
+//网络图片(二选一)
+func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String?
+///某项奖品抽完
+func zxDrawPrize(prizeView: ZXDrawPrizeView, drawOutAt index: NSInteger) -> Bool
+///点击抽奖按钮
+func zxDrawPrizeButtonImage(prizeView: ZXDrawPrizeView) -> UIImage
+///大背景
+func zxDrawPrizeBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
+///滚动背景
+func zxDrawPrizeScrollBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
 ```
 
 #### `Delegate`
 
 ```
-    ///点击抽奖按钮
-    func zxDrawPrizeStartAction(prizeView: ZXDrawPrizeView)
-    ///抽奖结束
-    func zxDrawPrizeEndAction(prizeView: ZXDrawPrizeView, prize index: NSInteger)
+///点击抽奖按钮
+func zxDrawPrizeStartAction(prizeView: ZXDrawPrizeView)
+///抽奖结束
+func zxDrawPrizeEndAction(prizeView: ZXDrawPrizeView, prize index: NSInteger)
 ```
 
 #### `RUN`
