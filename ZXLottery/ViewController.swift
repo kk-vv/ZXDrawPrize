@@ -59,16 +59,27 @@ class ViewController: UIViewController {
 
 //MARK: - ZXDrawPrizeDataSource
 extension ViewController: ZXDrawPrizeDataSource {
-    ///奖品格子数，不得小于三个
-    func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger {
-        return gridCount
-    }
-    ///各项奖品图片
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage {
+    ///各项奖品图片 (二选一，优先)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage? {
+        if index == 4 {
+            return nil
+        }
         if index == gridCount - 1 {
             return #imageLiteral(resourceName: "giftEmpty")
         }
         return UIImage.init(named: "gift\(index % 7 + 1)")!
+    }
+    ///各项奖品图片 url (二选一)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String? {
+        if index == 4 {//网络图片
+            return "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3398597671,2198934619&fm=27&gp=0.jpg"
+        }
+        return nil
+    }
+    
+    ///奖品格子数，不得小于三个
+    func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger {
+        return gridCount
     }
     ///某一项奖品抽完（不需要，直接return false 即可）
     func zxDrawPrize(prizeView: ZXDrawPrizeView, drawOutAt index: NSInteger) -> Bool {

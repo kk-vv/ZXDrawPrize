@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43F20F509A65782528C0A4E5 /* Pods_ZXLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41687B7D08DDCAE6C3EE1BD9 /* Pods_ZXLottery.framework */; };
 		6AD9949D208734F4001FE3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9949C208734F4001FE3A6 /* AppDelegate.swift */; };
 		6AD9949F208734F4001FE3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9949E208734F4001FE3A6 /* ViewController.swift */; };
 		6AD994A2208734F4001FE3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD994A0208734F4001FE3A6 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FF83CE80CB4A0455A4D89EF /* Pods-ZXLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLottery/Pods-ZXLottery.debug.xcconfig"; sourceTree = "<group>"; };
+		2A0DC12B87F60224048BF702 /* Pods-ZXLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXLottery/Pods-ZXLottery.release.xcconfig"; sourceTree = "<group>"; };
+		41687B7D08DDCAE6C3EE1BD9 /* Pods_ZXLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZXLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD99499208734F4001FE3A6 /* ZXLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9949C208734F4001FE3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD9949E208734F4001FE3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F20F509A65782528C0A4E5 /* Pods_ZXLottery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2997EA80ABE91082A6FFCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41687B7D08DDCAE6C3EE1BD9 /* Pods_ZXLottery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6AD99490208734F3001FE3A6 = {
 			isa = PBXGroup;
 			children = (
 				6AD9949B208734F4001FE3A6 /* ZXLottery */,
 				6AD9949A208734F4001FE3A6 /* Products */,
+				CFBD7326F5F02E18FB2BB044 /* Pods */,
+				0F2997EA80ABE91082A6FFCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +93,15 @@
 			path = ZXDrawPrize;
 			sourceTree = "<group>";
 		};
+		CFBD7326F5F02E18FB2BB044 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FF83CE80CB4A0455A4D89EF /* Pods-ZXLottery.debug.xcconfig */,
+				2A0DC12B87F60224048BF702 /* Pods-ZXLottery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AD994AB208734F5001FE3A6 /* Build configuration list for PBXNativeTarget "ZXLottery" */;
 			buildPhases = (
+				5050A9DD666BE636AFBE0D21 /* [CP] Check Pods Manifest.lock */,
 				6AD99495208734F4001FE3A6 /* Sources */,
 				6AD99496208734F4001FE3A6 /* Frameworks */,
 				6AD99497208734F4001FE3A6 /* Resources */,
+				FB58C2BE1A259A327EADD97C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +169,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5050A9DD666BE636AFBE0D21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZXLottery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB58C2BE1A259A327EADD97C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZXLottery/Pods-ZXLottery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXLottery/Pods-ZXLottery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6AD99495208734F4001FE3A6 /* Sources */ = {
@@ -294,16 +359,14 @@
 		};
 		6AD994AC208734F5001FE3A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FF83CE80CB4A0455A4D89EF /* Pods-ZXLottery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4384M9Z5J;
 				INFOPLIST_FILE = ZXLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reson.ZXLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -313,16 +376,14 @@
 		};
 		6AD994AD208734F5001FE3A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A0DC12B87F60224048BF702 /* Pods-ZXLottery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4384M9Z5J;
 				INFOPLIST_FILE = ZXLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reson.ZXLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -31,7 +31,10 @@ protocol ZXDrawPrizeDataSource: class {
     ///奖品格子数量
     func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger
     ///商品图片(包括谢谢参与)
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage
+    //本地图片(二选一 优先)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage?
+    //网络图片(二选一)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String?
     ///某项奖品抽完
     func zxDrawPrize(prizeView: ZXDrawPrizeView, drawOutAt index: NSInteger) -> Bool
     ///点击抽奖按钮
@@ -40,6 +43,15 @@ protocol ZXDrawPrizeDataSource: class {
     func zxDrawPrizeBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
     ///滚动背景
     func zxDrawPrizeScrollBackgroundImage(prizeView: ZXDrawPrizeView) -> UIImage?
+}
+
+extension ZXDrawPrizeDataSource {
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage? {
+        return nil
+    }
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String? {
+        return nil
+    }
 }
 
 
@@ -157,7 +169,8 @@ class ZXDrawPrizeView: UIView {
             for n in 0..<zx_count {
                 let tempI = (zx_count - 1 - n) //调整顺序
                 let spl = zxShapeLayers[tempI] //
-                spl.setPrizeImage(dataSouce.zxDrawPrize(prizeView: self, imageAt: tempI))
+                //spl.setPrizeImage(dataSouce.zxDrawPrize(prizeView: self, imageAt: tempI))
+                spl.setPrizeImage(dataSouce.zxDrawPrize(prizeView: self, imageAt: tempI), url: dataSouce.zxDrawPrize(prizeView: self, imageUrlAt: tempI))
                 if dataSouce.zxDrawPrize(prizeView: self, drawOutAt: tempI) {
                     spl.setMarkImage(#imageLiteral(resourceName: "drawOut"))
                 } else {

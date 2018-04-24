@@ -33,10 +33,13 @@
 #### `DataSouce`
 
 ```
-	///奖品格子数量
+    ///奖品格子数量
     func numberOfPrize(for drawprizeView: ZXDrawPrizeView) -> NSInteger
     ///商品图片(包括谢谢参与)
-    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage
+    //本地图片(二选一 优先)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageAt index: NSInteger) -> UIImage?
+    //网络图片(二选一)
+    func zxDrawPrize(prizeView: ZXDrawPrizeView, imageUrlAt index: NSInteger) -> String?
     ///某项奖品抽完
     func zxDrawPrize(prizeView: ZXDrawPrizeView, drawOutAt index: NSInteger) -> Bool
     ///点击抽奖按钮
@@ -50,10 +53,16 @@
 #### `Delegate`
 
 ```
-	///点击抽奖按钮
+    ///点击抽奖按钮
     func zxDrawPrizeStartAction(prizeView: ZXDrawPrizeView)
     ///抽奖结束
     func zxDrawPrizeEndAction(prizeView: ZXDrawPrizeView, prize index: NSInteger)
+```
+
+#### `RUN`
+
+```
+execute `pod install` in `Terminal` ,before run demo project.
 ```
 
 - `If Copy,Pls Keep The Writer Info.`

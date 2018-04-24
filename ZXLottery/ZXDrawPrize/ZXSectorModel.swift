@@ -8,38 +8,43 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class ZXPrizeContentLayer: NSObject {
     var zxshape = CAShapeLayer()
-    fileprivate var zxprizeImage = CALayer()
+    //fileprivate var zxprizeImage = CALayer()
+    fileprivate var zxprizeImage = UIImageView()
     fileprivate var zxmarkImage = CALayer()
-    //fileprivate var zxmarkLayer = CAShapeLayer()
     
     override init() {
         super.init()
 
         zxshape.masksToBounds = true
         
-        zxprizeImage.contentsGravity = kCAGravityResizeAspect
-        zxprizeImage.contentsScale = UIScreen.main.scale
-        zxprizeImage.masksToBounds = true
+        zxprizeImage.contentMode = .scaleAspectFit
+        zxprizeImage.clipsToBounds = true
         
         zxmarkImage.contentsGravity = kCAGravityResizeAspect
         zxmarkImage.contentsScale = UIScreen.main.scale
         zxmarkImage.masksToBounds = true
         
-        zxshape.addSublayer(zxprizeImage)
+        zxshape.addSublayer(zxprizeImage.layer)
         zxshape.addSublayer(zxmarkImage)
     }
     
-    func setPrizeImage(_ image: UIImage) {
-        self.zxprizeImage.contents = image.cgImage
+    func setPrizeImage(_ image: UIImage?, url: String?) {
+        self.zxprizeImage.image = nil
+        if let image = image {
+            self.zxprizeImage.image = image
+        } else if let url = url {
+            self.zxprizeImage.kf.setImage(with: URL(string: url))
+        }
     }
     
     func setMarkImage(_ image: UIImage?) {
         self.zxmarkImage.contents = image?.cgImage
         if image != nil {
-            self.zxprizeImage.opacity = 0.35
+            self.zxprizeImage.alpha = 0.35
         }
     }
 }
