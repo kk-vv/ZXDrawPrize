@@ -160,7 +160,8 @@ class ZXDrawPrizeView: UIView {
             self.btnStart.setImage(dataSouce.zxDrawPrizeButtonImage(prizeView: self), for: .normal)
             
             let pLayers = self.prizeContentLayer.sublayers
-            if let pLayers = pLayers, pLayers.count != zx_count {
+            //if let pLayers = pLayers, pLayers.count != zx_count {//数量相同导致重复添加
+            if let pLayers = pLayers {
                 for sl in pLayers {
                     sl.removeFromSuperlayer()
                 }

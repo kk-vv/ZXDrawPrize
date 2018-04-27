@@ -107,3 +107,23 @@ class ZXSectorModel {
         return layers
     }
 }
+
+extension CGPoint {
+    func zx_rotate(angle: CGFloat, clockwise: Bool = true) -> CGPoint {
+        var x1 = x
+        var y1 = y
+        if clockwise {
+            x1 = x * cos(angle) + y * sin(angle)
+            y1 = y * cos(angle) - x * sin(angle)
+        } else {
+            x1 = x * cos(angle) - y * sin(angle)
+            y1 = x * sin(angle) + y * cos(angle)
+        }
+        return CGPoint(x: x1, y: y1)
+    }
+    
+    func zx_sum(point: CGPoint) -> CGPoint {
+        return CGPoint(x: x + point.x, y: y + point.y)
+    }
+}
+
