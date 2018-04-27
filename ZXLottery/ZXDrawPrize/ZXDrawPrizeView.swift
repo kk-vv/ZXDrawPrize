@@ -149,6 +149,7 @@ class ZXDrawPrizeView: UIView {
             }
             
             ZXSectorModel.sectorCount = zx_count
+            zxShapeLayers.removeAll()
             zxShapeLayers = ZXSectorModel.zxSectorLayers()
 
             //旋转至垂直方向
